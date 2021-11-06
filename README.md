@@ -1,6 +1,9 @@
 # Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This project provides the dashboard of calling the backend services.
+
+![URL shortener](./docs/url-shortener.png)
+![Verification code](./docs/verification-code.png)
 
 ## Development server
 
