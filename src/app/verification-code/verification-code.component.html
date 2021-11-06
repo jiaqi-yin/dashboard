@@ -1,0 +1,37 @@
+<div class="container">
+  <form [formGroup]="gf" (ngSubmit)="onGenerate()">
+    <label for="generate" class="form-label">Enter your mobile number</label>
+    <div class="input-group mb-3">
+      <input 
+        id="phone_number"
+        type="text"
+        class="form-control"
+        formControlName="phone_number"
+        placeholder="0487654321">
+      <button class="btn btn-outline-primary" type="submit" [disabled]="!gf.valid">Send</button>
+    </div>
+  </form>
+  <div class="alert alert-success" role="alert" *ngIf="isGenerated && generationError === ''">Verification code is sent to {{ phone }}.</div>
+  <div class="alert alert-danger" role="alert" *ngIf="generationError !== ''">{{ generationError }}</div>
+
+  <form [formGroup]="vf" (ngSubmit)="onVerify()">
+    <label for="verify" class="form-label">Enter your verification code</label>
+    <div class="input-group mb-3">
+      <input 
+        id="phone_number"
+        type="text"
+        class="form-control"
+        formControlName="phone_number"
+        [(ngModel)]="phone"
+        hidden>
+      <input 
+        id="verification_code"
+        type="text"
+        class="form-control"
+        formControlName="verification_code">
+      <button class="btn btn-outline-primary" type="submit" [disabled]="!vf.valid">Verify</button>
+    </div>
+  </form>
+  <div class="alert alert-success" role="alert" *ngIf="isVerified && verificationError === ''">You are verified.</div>
+  <div class="alert alert-danger" role="alert" *ngIf="verificationError !== ''">{{ verificationError }}</div>
+</div>

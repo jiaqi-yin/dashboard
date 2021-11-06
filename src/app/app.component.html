@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container my-md-4 bd-layout">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="list-group">
+        <a 
+          class="list-group-item list-group-item-action"
+          routerLink="/url-shortener"
+          routerLinkActive="active">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">URL shortener</h5>
+          </div>
+          <small>This is the frontend of calling the URL shortener service https://github.com/jiaqi-yin/go-url-shortener</small>
+        </a>
+        <a 
+          class="list-group-item list-group-item-action"
+          routerLink="/verification-code"
+          routerLinkActive="active">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Verification code</h5>
+          </div>
+          <small>This is the frontend of calling the verification code service https://github.com/jiaqi-yin/go-verification-code</small>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
